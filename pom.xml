@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!--
 
-    Copyright (c) 2022, 2024 Contributors to the Eclipse Foundation. All rights reserved.
+    Copyright (c) 2022, 2026 Contributors to the Eclipse Foundation.
     Copyright (c) 2011, 2018 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
@@ -18,9 +18,7 @@
 
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.eclipse.ee4j</groupId>
@@ -30,7 +28,7 @@
 
     <groupId>org.glassfish.annotations</groupId>
     <artifactId>logging-annotation-processor</artifactId>
-    <version>1.11-SNAPSHOT</version>
+    <version>1.12-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>GlassFish Logging Annotation Processor</name>
     <description>Annotation processors which handles source level logging annotations</description>
@@ -39,19 +37,24 @@
         <connection>scm:git:https://github.com/eclipse-ee4j/glassfish-logging-annotation-processor.git</connection>
         <developerConnection>scm:git:git@github.com:eclipse-ee4j/glassfish-logging-annotation-processor.git</developerConnection>
         <url>https://github.com/eclipse-ee4j/glassfish-logging-annotation-processor</url>
-      <tag>HEAD</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <developers>
         <developer>
-            <id>yaminikb</id>
-            <name>Yamini K B</name>
-            <organization>Oracle Corporation</organization>
-            <organizationUrl>http://www.oracle.com/</organizationUrl>
+            <id>eclipseee4j</id>
+            <name>Eclipse EE4J Developers</name>
+            <organization>Eclipse Foundation</organization>
+            <email>ee4j-pmc@eclipse.org</email>
         </developer>
     </developers>
 
     <contributors>
+        <contributor>
+            <name>Yamini K B</name>
+            <organization>Oracle Corporation</organization>
+            <organizationUrl>http://www.oracle.com/</organizationUrl>
+        </contributor>
         <contributor>
             <name>Sandeep Shrivastava</name>
             <organization>Oracle Corporation</organization>
@@ -206,29 +209,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>release</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>3.2.8</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>
-
